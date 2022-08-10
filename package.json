@@ -1,0 +1,30 @@
+{
+  "name": "playwright_check",
+  "version": "1.0.0",
+  "module":"commonjs",
+  "description": "automation-using-playwright",
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  },
+  "main": "index.js",
+  "keywords": [
+    "playwright"
+  ],
+  "author": "Kaushik",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.24.2"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.18.6"
+  }
+}
