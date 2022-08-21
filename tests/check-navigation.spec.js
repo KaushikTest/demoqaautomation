@@ -1,7 +1,7 @@
 // @ts-check
 import { expect, test } from '@playwright/test';
 import * as DemoCases from '../cases/check-navigation';
-import { ALERTSLINK, BASELINK, BOOKSTORELINK, ELEMENTSLINK, FORMSLINK, INTERACTIONSLINK, WIDGETSLINK } from '../constants/linkconstants.js';
+import { ALERTSLINK, BOOKSTORELINK, ELEMENTSLINK, FORMSLINK, INTERACTIONSLINK, WIDGETSLINK } from '../constants/linkconstants.js';
 
 test.use({
     viewport: { width: 1920, height: 1080 },
