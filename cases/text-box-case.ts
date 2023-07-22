@@ -1,7 +1,7 @@
 import { Page } from "@playwright/test";
 import { BASELINK } from "../constants/linkconstants";
 import DemoQAWelcomePage from "../pages/demoqawelcomepage";
-import { TextBoxBuilder } from "../pages/textboxpage";
+import { TextBoxBuilder } from "../pages/elements/textboxpage";
 
 
 export async function testTextBox(page: Page) {

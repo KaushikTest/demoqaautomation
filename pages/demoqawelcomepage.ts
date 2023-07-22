@@ -29,7 +29,7 @@ export default class DemoQAWelcomePage{
         return this.page.locator(INTERACTIONS);
     }
 
-    public get elmentBooks(){
+    public get elementBooks(){
         return this.page.locator(BOOKSTORE);
     }
 
@@ -54,6 +54,6 @@ export default class DemoQAWelcomePage{
     }
 
     public async clickBooks(){
-        await this.elmentBooks.click();
+        await this.elementBooks.click();
     }
 }

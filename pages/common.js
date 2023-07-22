@@ -1,7 +1,7 @@
-import { chromium } from "@playwright/test";
+import { chromium, firefox } from "@playwright/test";
 
 export async function getPage() {
-    const browser = await chromium.launch({
+    const browser = await firefox.launch({
         headless: false
     });
     const context = await browser.newContext();

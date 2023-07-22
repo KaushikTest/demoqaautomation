@@ -1,6 +1,6 @@
 import { Page } from "@playwright/test";
 import { BASELINK } from "../constants/linkconstants";
-import { CheckBoxBuilder } from "../pages/checkbox";
+import { CheckBoxBuilder } from "../pages/elements/checkbox";
 import DemoQAWelcomePage from "../pages/demoqawelcomepage";
 
 
