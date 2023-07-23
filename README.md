@@ -1,4 +1,4 @@
-# playwright_check
+# DemoQA Automation
 Automation using playwright
 
 This repository is build to explore playwright framework.
