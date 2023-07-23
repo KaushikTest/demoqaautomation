@@ -2,6 +2,20 @@ import { Page } from "@playwright/test";
 
 export default class ButtonsPage{
 
+    doubleClickMe: any;
+    rightClickMe: any;
+    clickMe: any;
+
+    constructor(doubleClickMe:any,rightClickMe:any,clickMe:any){
+        this.doubleClickMe=doubleClickMe;
+        this.rightClickMe=rightClickMe;
+        this.clickMe=clickMe;
+    }
+
+}
+
+export class ButtonsPageBuilder{
+
 
     private page:Page;
     constructor(page:Page){
@@ -13,7 +27,7 @@ export default class ButtonsPage{
     }
 
     public async clickDoubleCLick(){
-        await this.DoubleClickMe.click();
+        await this.DoubleClickMe.dblclick();
     }
 
     public get RightClickMe(){
@@ -21,14 +35,18 @@ export default class ButtonsPage{
     }
 
     public async clickRightClick(){
-        await this.RightClickMe.click();
+        await this.RightClickMe.click({button:'right'});
     }
 
     public get ClickMe(){
-        return this.page.locator('#ZjrUk');
+        return this.page.locator('text="Click Me"');
     }
 
     public async clickClickMe(){
         await this.ClickMe.click();
+    }
+
+    build(){
+        return new ButtonsPage(this.DoubleClickMe,this.RightClickMe,this.ClickMe);
     }
 }
