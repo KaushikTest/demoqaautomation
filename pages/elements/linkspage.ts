@@ -2,6 +2,33 @@ import { Page } from "@playwright/test";
 
 export default class LinksPage{
 
+
+    home: any;
+    homer: any;
+    created: any;
+    noContent: any;
+    moved: any;
+    badRequest: any;
+    unauthorized: any;
+    forbidden: any;
+    notFound: any;
+
+
+    constructor(home: any, homer: any, created: any, noContent: any, moved: any, badRequest: any, unauthorized: any, forbidden: any, notFound: any){
+        this.home=home;
+        this.homer=homer;
+        this.created=created;
+        this.noContent=noContent;
+        this.moved=moved;
+        this.badRequest=badRequest;
+        this.unauthorized=unauthorized;
+        this.forbidden=forbidden;
+        this.notFound=notFound;
+    }
+}
+
+export class LinksPageBuilder{
+
 private page:Page;
 
     constructor(page:Page){
@@ -15,12 +42,12 @@ private page:Page;
         await this.Home.click();
     }
 
-    public get Homer(){
+    public get HomeDynamic(){
         return this.page.locator('#dynamicLink');
     }
 
-    public async clickHomer(){
-        await this.Homer.click();
+    public async clickHomeDynamic(){
+        await this.HomeDynamic.click();
     }
 
     public get Created(){
@@ -72,10 +99,14 @@ private page:Page;
     }
 
     public get NotFound(){
-        return this.page.locator('invalid-url');
+        return this.page.locator('#invalid-url');
     }
 
     public async clickNotFound(){
         await this.NotFound.click();
+    }
+
+    build(){
+        return new LinksPage(this.Home, this.HomeDynamic, this.Created, this.NoContent, this.Moved, this.BadRequest, this.Unauthorized, this.Forbidden, this.NotFound);
     }
 }
